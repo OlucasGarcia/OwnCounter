@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 export default function DashboardLayout({ children, title }) {
     return (
-        <div className="flex min-h-screen bg-[#F7F7FB]">
+        <div className="flex min-h-screen bg-[#FFF]">
             <Sidebar />
 
             <div className="flex-1 flex flex-col">
