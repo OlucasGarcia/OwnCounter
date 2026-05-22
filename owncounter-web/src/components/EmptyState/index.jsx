@@ -3,7 +3,6 @@ import Button from "../Button";
 export default function EmptyState({
     title,
     image,
-    buttonText,
 }) {
     return (
         <div
@@ -23,10 +22,6 @@ export default function EmptyState({
             >
                 {title}
             </h2>
-
-            <Button>
-                {buttonText}
-            </Button>
 
             <img
                 src={image}

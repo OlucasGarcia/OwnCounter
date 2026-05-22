@@ -26,7 +26,7 @@ export default function SidebarItem({
             <img
                 src={icon}
                 alt={text}
-                className="w-5"
+                className="w-10"
             />
 
             <span>{text}</span>

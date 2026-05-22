@@ -1,4 +1,9 @@
+import { useAuth } from "../../context/AuthContext";
+
 export default function Header({ title }) {
+
+    const { user } = useAuth();
+
     return (
         <header
             className="
@@ -16,15 +21,27 @@ export default function Header({ title }) {
                 {title}
             </h1>
 
-            <span
-                className="
-          text-[#5058CF]
-          font-semibold
-          text-xl
-        "
-            >
-                Olá 👋🏻
-            </span>
+            <div>
+                <h2
+                    className="
+      text-3xl
+      font-bold
+      text-[#1E1E1E]
+    "
+                >
+                    Olá,
+                    {user?.name || "Usuário"} 👋
+                </h2>
+
+                <p
+                    className="
+      text-gray-500
+      mt-1
+    "
+                >
+                    Bem-vindo ao OwnCounter
+                </p>
+            </div>
         </header>
     );
 }

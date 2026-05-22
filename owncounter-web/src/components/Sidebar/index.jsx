@@ -1,10 +1,36 @@
 import SidebarItem from "./SidebarItem";
 
+import dashboardIcon from "../../assets/HomeIcon.png";
+import transactionsIcon from "../../assets/TransactionIcon.png";
+import reportsIcon from "../../assets/ReportsIcon.png";
+import logoutIcon from "../../assets/LogoutIcon.png";
+import logo from "../../assets/LogoIcon.png";
+
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { useFinance } from "../../context/FinanceContext";
+
 export default function Sidebar() {
+
+    const navigate = useNavigate();
+
+    const { logout } = useAuth();
+
+    const { clearTransactions } =
+        useFinance();
+
+    function handleLogout() {
+        clearTransactions();
+        
+        logout();
+
+        navigate("/");
+    }
+
     return (
         <aside
             className="
-        w-[260px]
+        w-[270px]
         min-h-screen
         bg-[#5058CF]
         text-white
@@ -12,46 +38,68 @@ export default function Sidebar() {
         flex-col
         px-5
         py-8
-      "
+        "
         >
-            {/* Logo */}
-            <div className="flex items-center gap-3 mb-14">
-                <div className="w-10 h-10 bg-white rounded-xl" />
+            <div
+                className="
+                    flex items-center
+                    gap-3
+                    mb-14
+                "
+            >
+                <img
+                    src={logo}
+                    alt="OwnCounter"
+                    className="w-10 h-10"
+                />
 
-                <h1 className="text-3xl font-bold">
+                <h1
+                    className="
+                        text-3xl
+                        font-bold
+                    "
+                >
                     OwnCounter
                 </h1>
             </div>
 
-            {/* Menu */}
             <nav className="flex flex-col gap-4">
                 <SidebarItem
                     text="Inicio"
                     to="/dashboard"
+                    icon={dashboardIcon}
                 />
 
                 <SidebarItem
                     text="Movimentações"
                     to="/transactions"
+                    icon={transactionsIcon}
                 />
 
                 <SidebarItem
                     text="Relatórios"
                     to="/reports"
+                    icon={reportsIcon}
                 />
             </nav>
 
-            {/* Logout */}
             <div className="mt-auto">
                 <button
+                    onClick={handleLogout}
                     className="
-            flex items-center gap-3
-            font-semibold
-            opacity-80 hover:opacity-100
-            transition-all
-          "
+                        flex items-center
+                        gap-3
+                        font-semibold
+                        opacity-80
+                        hover:opacity-100
+                        transition-all duration-300
+                    "
                 >
-                    <div className="w-5 h-5 bg-white rounded" />
+                    <img
+                        src={logoutIcon}
+                        alt="Logout"
+                        className="w-12 h-8"
+                    />
 
                     <span>Sair</span>
                 </button>
