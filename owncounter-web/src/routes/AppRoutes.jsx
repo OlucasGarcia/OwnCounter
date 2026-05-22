@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import Landing from "../pages/Landing";
+import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import Transactions from "../pages/Transactions";
@@ -8,9 +8,8 @@ import Reports from "../pages/Reports";
 
 export default function AppRoutes() {
     return (
-        <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Landing />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/transactions" element={<Transactions />} />
@@ -21,6 +20,5 @@ export default function AppRoutes() {
                     element={<Navigate to="/dashboard" replace />}
                 />
             </Routes>
-        </BrowserRouter>
     );
 }
