@@ -10,7 +10,10 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useFinance } from "../../context/FinanceContext";
 
-export default function Sidebar() {
+export default function Sidebar({
+    isSidebarOpen,
+    setIsSidebarOpen,
+}) {
 
     const navigate = useNavigate();
 
@@ -21,7 +24,7 @@ export default function Sidebar() {
 
     function handleLogout() {
         clearTransactions();
-        
+
         logout();
 
         navigate("/");
@@ -29,17 +32,52 @@ export default function Sidebar() {
 
     return (
         <aside
-            className="
-        w-[270px]
-        min-h-screen
-        bg-[#5058CF]
-        text-white
-        flex
-        flex-col
-        px-5
-        py-8
-        "
+            className={`
+    fixed
+    top-0
+    left-0
+    z-50
+
+    w-[260px]
+    min-h-screen
+
+    bg-[#5058CF]
+    text-white
+
+    flex
+    flex-col
+
+    px-5
+    py-8
+
+    transform
+    transition-transform
+    duration-300
+
+    ${isSidebarOpen
+                    ? "translate-x-0"
+                    : "-translate-x-full"
+                }
+
+    md:translate-x-0
+`}
         >
+            <button
+                onClick={() =>
+                    setIsSidebarOpen(
+                        false
+                    )
+                }
+                className="
+            md:hidden
+            text-3xl
+            self-end
+            mb-6
+        "
+            >
+                ✕
+            </button>
+
             <div
                 className="
                     flex items-center

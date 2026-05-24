@@ -54,21 +54,30 @@ export default function TransactionForm({
           border-[#C8CBFF]
           rounded-3xl
           shadow-sm
-          px-16 md:px-16
-          py-10
+          px-5 py-6
+          md:px-16 md:py-10
         "
             >
 
-                <div className="flex justify-center gap-3 mb-10">
+                <div className="flex flex-col
+                                sm:flex-row
+                                justify-center
+                                gap-3
+                                mb-8
+                                md:mb-10">
                     <button
                         type="button"
                         onClick={() =>
                             setType("income")
                         }
                         className={`
-              px-10 py-3 rounded-xl
-              font-bold transition-all
-              ${type === "income"
+                                    w-full
+                                    sm:w-auto
+                                    px-6
+                                    md:px-10
+                                    py-3 rounded-xl
+                                    font-bold transition-all
+                                ${type === "income"
                                 ? "bg-[#5058CF] text-white"
                                 : "bg-[#ECEBFA] text-[#5058CF]"
                             }
@@ -83,9 +92,13 @@ export default function TransactionForm({
                             setType("expense")
                         }
                         className={`
-              px-10 py-3 rounded-xl
-              font-bold transition-all
-              ${type === "expense"
+                                    w-full
+                                    sm:w-auto
+                                    px-6
+                                    md:px-10
+                                    py-3 rounded-xl
+                                    font-bold transition-all
+                                ${type === "expense"
                                 ? "bg-[#5058CF] text-white"
                                 : "bg-[#ECEBFA] text-[#5058CF]"
                             }
@@ -99,6 +112,8 @@ export default function TransactionForm({
                     <label
                         className="
               text-[#5058CF]
+              text-sm
+              md:text-base
               font-bold
               mb-2
             "
@@ -116,7 +131,8 @@ export default function TransactionForm({
                         className="
               border border-[#BFC2FF]
               rounded-xl
-              p-4
+              p-3
+              md:p-4
               outline-none
               focus:border-[#5058CF]
             "
@@ -127,6 +143,8 @@ export default function TransactionForm({
                     <label
                         className="
               text-[#5058CF]
+              text-sm
+              md:text-base
               font-bold
               mb-2
             "
@@ -144,7 +162,8 @@ export default function TransactionForm({
                         className="
               border border-[#BFC2FF]
               rounded-xl
-              p-4
+              p-3
+              md:p-4
               outline-none
               focus:border-[#5058CF]
             "
@@ -155,6 +174,8 @@ export default function TransactionForm({
                     <label
                         className="
               text-[#5058CF]
+              text-sm
+              md:text-base
               font-bold
               mb-2
             "
@@ -171,14 +192,18 @@ export default function TransactionForm({
                         className="
               border border-[#BFC2FF]
               rounded-xl
-              p-4
+              p-3
+              md:p-4
               outline-none
               focus:border-[#5058CF]
             "
                     />
                 </div>
 
-                <div className="flex justify-center gap-5">
+                <div className="flex flex-col
+                                sm:flex-row
+                                justify-center
+                                gap-4">
                     <button
                         type="submit"
                         className="
@@ -187,7 +212,10 @@ export default function TransactionForm({
               transition-all
               text-white
               font-bold
-              px-12
+              w-full
+              sm:w-auto
+              px-8
+              md:px-12
               py-3
               rounded-xl
             "
@@ -207,7 +235,10 @@ export default function TransactionForm({
               hover:bg-[#F2F3FF]
               transition-all
               font-bold
-              px-12
+              w-full
+              sm:w-auto
+              px-8
+              md:px-12
               py-3
               rounded-xl
             "

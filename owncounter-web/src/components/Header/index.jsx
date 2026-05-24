@@ -1,45 +1,84 @@
 import { useAuth } from "../../context/AuthContext";
 
-export default function Header({ title }) {
+export default function Header({ title, setIsSidebarOpen }) {
 
     const { user } = useAuth();
 
     return (
         <header
             className="
-        flex items-center justify-between
-        px-10 pt-8
+        sticky top-0
+    z-30
+
+    flex items-center
+    justify-between
+    backdrop-blur-sm
+    px-4 py-5
+    md:px-10 md:py-6
       "
         >
-            <h1
+            <div
                 className="
-          text-5xl
-          font-bold
-          text-[#5058CF]
-        "
+        flex items-center
+        gap-4
+    "
             >
-                {title}
-            </h1>
+                <button
+                    onClick={() =>
+                        setIsSidebarOpen(
+                            true
+                        )
+                    }
+                    className="
+            md:hidden
 
-            <div>
+            text-3xl
+            text-[#5058CF]
+        "
+                >
+                    ☰
+                </button>
+
+                <h1
+                    className="
+            text-2xl
+            md:text-4xl
+
+            font-bold
+            text-[#5058CF]
+        "
+                >
+                    {title}
+                </h1>
+            </div>
+
+            <div className="text-right">
                 <h2
                     className="
-      text-3xl
-      font-bold
-      text-[#1E1E1E]
-    "
+            text-lg
+            md:text-4xl
+
+            font-bold
+            text-[#1E1E1E]
+        "
                 >
                     Olá,
-                    {user?.name || "Usuário"} 👋
+                    {" "}
+                    {user?.name ||
+                        "Usuário"} 👋
                 </h2>
 
                 <p
                     className="
-      text-gray-500
-      mt-1
-    "
+            hidden md:block
+
+            text-xl
+            text-gray-500
+            mt-1
+        "
                 >
-                    Bem-vindo ao OwnCounter
+                    Bem-vindo ao
+                    OwnCounter
                 </p>
             </div>
         </header>

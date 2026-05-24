@@ -16,13 +16,16 @@ export default function TransactionCard({
     return (
         <div
             className="
-                flex items-center
+                flex flex-col
+                md:flex-row
+                md:items-center
                 justify-between
+                gap-4
                 py-5
             "
         >
             {/* LEFT */}
-            <div className="flex gap-4">
+            <div className="flex items-start gap-4 w-full">
                 <div
                     className={`
                         w-[4px]
@@ -37,7 +40,8 @@ export default function TransactionCard({
                 <div>
                     <h3
                         className="
-                            text-2xl
+                            text-xl
+                            md:text-2xl
                             font-bold
                             text-black
                         "
@@ -47,7 +51,8 @@ export default function TransactionCard({
 
                     <span
                         className="
-                            text-lg
+                            text-sm
+                            md:text-lg
                             text-black
                             opacity-80
                         "
@@ -63,6 +68,9 @@ export default function TransactionCard({
             <div
                 className="
                     flex items-center
+                    justify-between
+                    w-full
+                    md:w-auto
                     gap-6
                 "
             >
@@ -70,7 +78,7 @@ export default function TransactionCard({
                 <div
                     className={`
                         flex items-center gap-2
-                        font-bold text-2xl
+                        font-bold text-xl md:text-2xl
                         ${isIncome
                             ? "text-[#57E83B]"
                             : "text-[#FF5A1F]"
@@ -101,7 +109,8 @@ export default function TransactionCard({
                         text-red-400
                         hover:text-red-500
                         transition-all duration-300
-                        text-2xl
+                        text-xl
+                        md:text-2xl
                         font-bold
                     "
                 >

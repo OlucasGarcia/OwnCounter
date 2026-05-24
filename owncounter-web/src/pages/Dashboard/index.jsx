@@ -67,9 +67,23 @@ export default function Dashboard() {
 
     return (
         <DashboardLayout title="Dashboard">
-            <div className="flex flex-col gap-10">
+            <div className="
+        flex flex-col
+        gap-6
+        md:gap-10
+    ">
 
-                <div className="flex items-center justify-between">
+                <div className="
+        flex flex-col
+        md:flex-row
+
+        items-start
+        md:items-center
+
+        justify-between
+
+        gap-4
+    ">
                     <PeriodFilter
                         current={period}
                         setCurrent={setPeriod}
@@ -143,7 +157,7 @@ export default function Dashboard() {
                             className="
                                 grid
                                 grid-cols-1
-                                xl:grid-cols-2
+                                lg:grid-cols-2
                                 gap-12
                             "
                         >
@@ -151,8 +165,11 @@ export default function Dashboard() {
                             <div>
                                 <h2
                                     className="
-                    text-3xl font-bold mb-6
-                  "
+                                text-2xl
+                                md:text-3xl
+                                font-bold
+                                mb-4
+                                md:mb-6"
                                 >
                                     Últimas movimentações
                                 </h2>
@@ -167,8 +184,11 @@ export default function Dashboard() {
                             <div>
                                 <h2
                                     className="
-                    text-3xl font-bold mb-6
-                  "
+                                text-2xl
+                                md:text-3xl
+                                font-bold
+                                mb-4
+                                md:mb-6"
                                 >
                                     Relatórios visuais
                                 </h2>

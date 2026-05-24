@@ -72,10 +72,19 @@ export default function Reports() {
 
     return (
         <DashboardLayout title="Relatórios">
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-6 md:gap-10">
 
                 {/* Header */}
-                <div className="flex justify-between items-center">
+                <div
+                    className="
+                        flex flex-col
+                        md:flex-row
+                        items-start
+                        md:items-center
+                        justify-between
+                        gap-4
+                    "
+>
                     <PeriodFilter
                         current={period}
                         setCurrent={setPeriod}
@@ -91,7 +100,16 @@ export default function Reports() {
                 ) : (
                     <>
                         {/* Cards */}
-                        <div className="flex gap-8">
+                        <div
+                            className="
+                                grid
+                                grid-cols-1
+                                md:grid-cols-2
+                                xl:grid-cols-3
+                                gap-6
+                                md:gap-8
+                            "
+>
                             <SummaryCard
                                 title="Receita"
                                 value={formatCurrency(
@@ -127,7 +145,7 @@ export default function Reports() {
                             className="
                                 grid
                                 grid-cols-1
-                                xl:grid-cols-2
+                                lg:grid-cols-2
                                 gap-8
                             "
                         >
@@ -135,7 +153,11 @@ export default function Reports() {
                             <div>
                                 <h2
                                     className="
-                    text-2xl font-bold mb-5
+                    text-xl
+                    md:text-2xl
+                    font-bold
+                    mb-4
+                    md:mb-5
                   "
                                 >
                                     Evolução financeira
@@ -149,7 +171,11 @@ export default function Reports() {
                             <div>
                                 <h2
                                     className="
-                    text-2xl font-bold mb-5
+                    text-xl
+                    md:text-2xl
+                    font-bold
+                    mb-4
+                    md:mb-5
                   "
                                 >
                                     Receita x Despesa

@@ -14,18 +14,27 @@ export default function FinanceChart({
         <div
             className="
         w-full
-        h-[320px]
+        h-[260px]
+        md:h-[320px]
         bg-white
         border border-[#E5E5F0]
         rounded-3xl
-        p-6
+        p-4
+        md:p-6
       "
         >
             <ResponsiveContainer
                 width="100%"
                 height="100%"
             >
-                <AreaChart data={data}>
+                <AreaChart data={data}
+                margin={{
+                        top: 10,
+                        right: 10,
+                        left: -20,
+                        bottom: 0,
+                        }}
+                >
 
                     <defs>
                         <linearGradient
@@ -58,6 +67,7 @@ export default function FinanceChart({
                         dataKey="name"
                         tickLine={false}
                         axisLine={false}
+                        fontSize={12}
                     />
 
                     <Tooltip />

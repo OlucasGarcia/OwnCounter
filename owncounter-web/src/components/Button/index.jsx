@@ -6,15 +6,28 @@ export default function Button({
         <button
             onClick={onClick}
             className="
-        bg-[#5058CF]
-        hover:bg-[#434BC0]
-        transition-all
-        text-white
-        font-bold
-        px-10
-        py-3
-        rounded-xl
-      "
+                w-full
+                sm:w-auto
+
+                bg-[#5058CF]
+                hover:bg-[#434BC0]
+
+                transition-all
+                duration-300
+
+                text-white
+                font-bold
+
+                text-sm
+                md:text-base
+
+                px-6
+                md:px-10
+
+                py-3
+
+                rounded-xl
+            "
         >
             {children}
         </button>
